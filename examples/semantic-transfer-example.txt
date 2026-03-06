@@ -1,1 +1,35 @@
+Example Semantic Transaction
 
+This example illustrates how semantic metadata can be attached to a token transfer using the Countable Coin smart contract.
+
+Function
+
+transferWithCountableData(
+    address to,
+    uint256 amount,
+    string deptCode,
+    string purposeCode,
+    string refId
+)
+
+Example Parameters
+
+to: 0x1234567890abcdef1234567890abcdef12345678
+amount: 100 cUSD
+deptCode: D001
+purposeCode: P001
+refId: INV-2026-001
+
+Expected Event
+
+CountableTransfer(
+    from,
+    to,
+    amount,
+    deptCode,
+    purposeCode,
+    refId,
+    timestamp
+)
+
+This event can be consumed by enterprise systems such as ERP or auditing platforms to interpret the accounting meaning of the transaction.
